@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "^0.0.0",
+    "mongodb": "^3.3.0",
+    "require": "^2.4.20",
+    "body-parser": "latest"
+  },
+  "devDependencies": {
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
