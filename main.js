@@ -5,12 +5,14 @@ let bodyParser = require('body-parser');
 let uuid = require('uuid');
 let { getUserList, getUserByName, insertUser, updateUser, deleteUser } = require('./model/UserService');
 
+app.listen(7777);
+
 app.use(bodyParser.json());
 
 //设置跨域访问
 app.all('*', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "http://localhost:8000");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
     res.header("Content-Type", "application/json;charset=utf-8");
     res.header("Access-Control-Allow-Credentials", true);
@@ -51,6 +53,7 @@ app.post('/user', (req, res) => {
 app.put('/user/:id', (req, res) => {
     let user = req.body;
     let id = req.params.id;
+    delete user._id;
     updateUser(id, user).then(response => {
         if (response.result.ok === 1) {
             res.status(200);
