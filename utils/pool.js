@@ -1,5 +1,5 @@
 let MongoClient = require('mongodb').MongoClient;
-let url = "mongodb://localhost:27017";
+let url = "mongodb://134.175.50.144:27017";
 
 function getMongoData(dbName, collectionName, whereStr) {
     return new Promise(function (resolve, reject) {
